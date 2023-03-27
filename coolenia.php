@@ -4,6 +4,10 @@
  * Description: Plugin pour les cookies
  * Author: NoName
  */
+$page_title = "test";
+$menu_title = "test";
+$capability = "test";
+$menu_slug = "test";
 
 define( 'WP_DEBUG', true );
 function starting_tarte_au_citron() {
@@ -62,4 +66,18 @@ function tarte_au_citron() {
     <?php
 }
 
+
 add_action('wp_head', 'tarte_au_citron');
+
+function wpdocs_register_my_custom_menu_page() {
+    add_menu_page(
+        __( 'Custom Menu Title', 'textdomain' ),
+        'CooLenia Extension',
+        'manage_options',
+        '/CooLenia/coolenia-admin.php',
+        '',
+        plugins_url( 'myplugin/images/icon.png' ),
+        6
+    );
+}
+add_action( 'admin_menu', 'wpdocs_register_my_custom_menu_page' );
