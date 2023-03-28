@@ -12,56 +12,82 @@ function starting_tarte_au_citron() {
 
 add_action('wp_enqueue_scripts', 'starting_tarte_au_citron');
 
-function tarte_au_citron() {
+$privacyUrl = get_option('privacyUrl');
+$bodyPosition = get_option('bodyPosition');
+$hashtag = get_option('hashtag');
+$cookieName = get_option('cookieName');
+$Orientation = get_option('Orientation');
+$groupServices = get_option('groupServices');
+$serviceDefaultState = get_option('serviceDefaultState');
+$showAlertSmall = get_option('showAlertSmall');
+$cookieslist = get_option('cookieslist');
+$closePopup = get_option('closePopup');
+$adblocker = get_option('adblocker');
+$DenyAllCta = get_option('DenyAllCta');
+$AcceptAllCta = get_option('AcceptAllCta');
+$highPrivacy = get_option('highPrivacy');
+$handleBrowserDNTRequest = get_option('handleBrowserDNTRequest');
+$removeCredit = get_option('removeCredit');
+$moreInfoLink = get_option('moreInfoLink');
+$useExternalCss = get_option('useExternalCss');
+$useExternalJs = get_option('useExternalJs');
+$readmoreLink = get_option('readmoreLink');
+$mandatory = get_option('mandatory');
+$mandatoryCta = get_option('mandatoryCta');
+
+
+function tarte_au_citron($privacyUrl, $bodyPosition, $hashtag, $cookieName, $Orientation, $groupServices,
+                         $serviceDefaultState, $showAlertSmall, $cookieslist, $closePopup, $adblocker, $DenyAllCta,
+                         $AcceptAllCta, $highPrivacy, $handleBrowserDNTRequest, $removeCredit, $moreInfoLink, $useExternalCss,
+                         $useExternalJs, $readmoreLink, $mandatory, $mandatoryCta) {
     ?>
     <script src="/wp-content/plugins/CooLenia/tarteaucitron.js-1.10.0/tarteaucitron.js"></script>
     <script type="text/javascript">
         tarteaucitron.init({
-            "privacyUrl": "", /* Privacy policy url */
-            "bodyPosition": "bottom", /* or top to bring it as first element for accessibility */
+            "privacyUrl": <?= $privacyUrl ?>, /* Privacy policy url */
+            "bodyPosition": <?= $bodyPosition ?>, /* or top to bring it as first element for accessibility */
 
-            "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
-            "cookieName": "tarteaucitron", /* Cookie name */
+            "hashtag": <?= $hashtag ?>, /* Open the panel with this hashtag */
+            "cookieName": <?= $cookieName ?>, /* Cookie name */
 
-            "orientation": "middle", /* Banner position (top - bottom) */
+            "orientation": <?= $Orientation ?>, /* Banner position (top - bottom) */
 
-            "groupServices": false, /* Group services by category */
-            "serviceDefaultState": "wait", /* Default state (true - wait - false) */
+            "groupServices": <?= $groupServices ?>, /* Group services by category */
+            "serviceDefaultState": <?= $serviceDefaultState ?>, /* Default state (true - wait - false) */
 
-            "showAlertSmall": false, /* Show the small banner on bottom right */
-            "cookieslist": false, /* Show the cookie list */
+            "showAlertSmall": <?= $showAlertSmall ?>, /* Show the small banner on bottom right */
+            "cookieslist": <?= $cookieslist ?>, /* Show the cookie list */
 
-            "closePopup": false, /* Show a close X on the banner */
+            "closePopup": <?= $closePopup ?>, /* Show a close X on the banner */
 
             "showIcon": true, /* Show cookie icon to manage cookies */
             //"iconSrc": "", /* Optionnal: URL or base64 encoded image */
             "iconPosition": "BottomRight", /* BottomRight, BottomLeft, TopRight and TopLeft */
 
-            "adblocker": false, /* Show a Warning if an adblocker is detected */
+            "adblocker": <?= $adblocker ?>, /* Show a Warning if an adblocker is detected */
 
-            "DenyAllCta" : true, /* Show the deny all button */
-            "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
-            "highPrivacy": true, /* HIGHLY RECOMMANDED Disable auto consent */
+            "DenyAllCta" : <?= $DenyAllCta ?>, /* Show the deny all button */
+            "AcceptAllCta" : <?= $AcceptAllCta ?>, /* Show the accept all button when highPrivacy on */
+            "highPrivacy": <?= $highPrivacy ?>, /* HIGHLY RECOMMANDED Disable auto consent */
 
-            "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+            "handleBrowserDNTRequest": <?= $handleBrowserDNTRequest ?>, /* If Do Not Track == 1, disallow all */
 
-            "removeCredit": false, /* Remove credit link */
-            "moreInfoLink": true, /* Show more info link */
+            "removeCredit": <?= $removeCredit ?>, /* Remove credit link */
+            "moreInfoLink": <?= $moreInfoLink ?>, /* Show more info link */
 
-            "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
-            "useExternalJs": false, /* If false, the tarteaucitron.js file will be loaded */
+            "useExternalCss": <?= $useExternalCss ?>, /* If false, the tarteaucitron.css file will be loaded */
+            "useExternalJs": <?= $useExternalJs ?>, /* If false, the tarteaucitron.js file will be loaded */
 
             //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
 
-            "readmoreLink": "", /* Change the default readmore link */
+            "readmoreLink": <?= $readmoreLink ?>, /* Change the default readmore link */
 
-            "mandatory": true, /* Show a message about mandatory cookies */
-            "mandatoryCta": true /* Show the disabled accept button when mandatory on */
+            "mandatory": <?= $mandatory ?>, /* Show a message about mandatory cookies */
+            "mandatoryCta": <?= $mandatoryCta ?> /* Show the disabled accept button when mandatory on */
         });
     </script>
     <?php
 }
-
 
 add_action('wp_head', 'tarte_au_citron');
 
