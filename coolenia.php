@@ -132,6 +132,22 @@ function coolenia_setting_container(){
     );
 
     add_settings_field(
+        'privacyUrl_text_field',                   // Field ID
+        __( 'privacyUrl', 'example' ),  // Title
+        'privacyUrl_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'bodyPosition_text_field',                   // Field ID
+        __( 'bodyPosition', 'example' ),  // Title
+        'bodyPosition_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
         'hashtag_text_field',                   // Field ID
         __( 'hashtag', 'example' ),  // Title
         'hashtag_field_markup',            // Callback to display the field
@@ -140,9 +156,153 @@ function coolenia_setting_container(){
     );
 
     add_settings_field(
+        'cookieName_text_field',                   // Field ID
+        __( 'cookieName', 'example' ),  // Title
+        'cookieName_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
         'orientation_text_field',                   // Field ID
         __( 'Orientation', 'example' ),  // Title
         'orientation_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'groupServices_text_field',                   // Field ID
+        __( 'groupServices', 'example' ),  // Title
+        'groupServices_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'serviceDefaultState_text_field',                   // Field ID
+        __( 'serviceDefaultState', 'example' ),  // Title
+        'serviceDefaultState_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'showAlertSmall_text_field',                   // Field ID
+        __( 'showAlertSmall', 'example' ),  // Title
+        'showAlertSmall_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'cookieslist_text_field',                   // Field ID
+        __( 'cookieslist', 'example' ),  // Title
+        'cookieslist_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'closePopup_text_field',                   // Field ID
+        __( 'closePopup', 'example' ),  // Title
+        'closePopup_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'adblocker_text_field',                   // Field ID
+        __( 'adblocker', 'example' ),  // Title
+        'adblocker_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'DenyAllCta_text_field',                   // Field ID
+        __( 'DenyAllCta', 'example' ),  // Title
+        'DenyAllCta_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'AcceptAllCta_text_field',                   // Field ID
+        __( 'AcceptAllCta', 'example' ),  // Title
+        'AcceptAllCta_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'highPrivacy_text_field',                   // Field ID
+        __( 'highPrivacy', 'example' ),  // Title
+        'highPrivacy_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'handleBrowserDNTRequest_text_field',                   // Field ID
+        __( 'handleBrowserDNTRequest', 'example' ),  // Title
+        'handleBrowserDNTRequest_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'removeCredit_text_field',                   // Field ID
+        __( 'removeCredit', 'example' ),  // Title
+        'removeCredit_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'moreInfoLink_text_field',                   // Field ID
+        __( 'moreInfoLink', 'example' ),  // Title
+        'moreInfoLink_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'useExternalCss_text_field',                   // Field ID
+        __( 'useExternalCss', 'example' ),  // Title
+        'useExternalCss_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'useExternalJs_text_field',                   // Field ID
+        __( 'useExternalJs', 'example' ),  // Title
+        'useExternalJs_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'readmoreLink_text_field',                   // Field ID
+        __( 'readmoreLink', 'example' ),  // Title
+        'readmoreLink_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'mandatory_text_field',                   // Field ID
+        __( 'mandatory', 'example' ),  // Title
+        'mandatory_field_markup',            // Callback to display the field
+        'coolenia_settings_page',                // Page
+        'header_section',                      // Section
+    );
+
+    add_settings_field(
+        'mandatoryCta_text_field',                   // Field ID
+        __( 'mandatoryCta', 'example' ),  // Title
+        'mandatoryCta_field_markup',            // Callback to display the field
         'coolenia_settings_page',                // Page
         'header_section',                      // Section
     );
@@ -161,6 +321,26 @@ function coolenia_section_markup( $args ){}
  *
  * @param  array  $args  Arguments passed to corresponding add_settings_field() call
  */
+
+function privacyUrl_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <input class="regular-text" type="text" name="example_setting" value="<?php echo esc_attr( $value ); ?>">
+    <?php
+}
+
+function bodyPosition_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>Top</option>
+        <option>Bottom</option>
+    </select>
+    <?php
+}
+
 function orientation_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
@@ -177,5 +357,201 @@ function hashtag_field_markup( $args ){
     $value   = $setting ?: '';
     ?>
     <input class="regular-text" type="text" name="example_setting" value="<?php echo esc_attr( $value ); ?>">
+    <?php
+}
+
+function cookieName_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <input class="regular-text" type="text" name="example_setting" value="<?php echo esc_attr( $value ); ?>">
+    <?php
+}
+
+function groupServices_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function serviceDefaultState_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>true</option>
+        <option>wait</option>
+        <option>false</option>
+    </select>
+    <?php
+}
+
+function showAlertSmall_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function cookieslist_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>true</option>
+        <option>wait</option>
+        <option>false</option>
+    </select>
+    <?php
+}
+
+function closePopup_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function adblocker_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function DenyAllCta_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>true</option>
+        <option>wait</option>
+        <option>false</option>
+    </select>
+    <?php
+}
+
+function AcceptAllCta_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function highPrivacy_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function handleBrowserDNTRequest_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function removeCredit_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function moreInfoLink_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+
+function useExternalCss_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function useExternalJs_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function readmoreLink_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <input class="regular-text" type="text" name="example_setting" value="<?php echo esc_attr( $value ); ?>">
+    <?php
+}
+
+function mandatory_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
+    <?php
+}
+
+function mandatoryCta_field_markup( $args ){
+    $setting = get_option( 'example_setting' );
+    $value   = $setting ?: '';
+    ?>
+    <select>
+        <option>false</option>
+        <option>true</option>
+    </select>
     <?php
 }
