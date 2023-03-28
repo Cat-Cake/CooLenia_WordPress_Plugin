@@ -6,54 +6,54 @@
  * Author: NoName
  */
 
+
+
 function starting_tarte_au_citron() {
     wp_enqueue_script( 'mytarteaucitron', './tarteaucitron.js-1.10.0/tarteaucitron.js' );
 }
 
 add_action('wp_enqueue_scripts', 'starting_tarte_au_citron');
 
-$privacyUrl = get_option('privacyUrl');
-$bodyPosition = get_option('bodyPosition');
-$hashtag = get_option('hashtag');
-$cookieName = get_option('cookieName');
-$Orientation = get_option('Orientation');
-$groupServices = get_option('groupServices');
-$serviceDefaultState = get_option('serviceDefaultState');
-$showAlertSmall = get_option('showAlertSmall');
-$cookieslist = get_option('cookieslist');
-$closePopup = get_option('closePopup');
-$adblocker = get_option('adblocker');
-$DenyAllCta = get_option('DenyAllCta');
-$AcceptAllCta = get_option('AcceptAllCta');
-$highPrivacy = get_option('highPrivacy');
-$handleBrowserDNTRequest = get_option('handleBrowserDNTRequest');
-$removeCredit = get_option('removeCredit');
-$moreInfoLink = get_option('moreInfoLink');
-$useExternalCss = get_option('useExternalCss');
-$useExternalJs = get_option('useExternalJs');
-$readmoreLink = get_option('readmoreLink');
-$mandatory = get_option('mandatory');
-$mandatoryCta = get_option('mandatoryCta');
 
 
-function tarte_au_citron($privacyUrl, $bodyPosition, $hashtag, $cookieName, $Orientation, $groupServices,
-                         $serviceDefaultState, $showAlertSmall, $cookieslist, $closePopup, $adblocker, $DenyAllCta,
-                         $AcceptAllCta, $highPrivacy, $handleBrowserDNTRequest, $removeCredit, $moreInfoLink, $useExternalCss,
-                         $useExternalJs, $readmoreLink, $mandatory, $mandatoryCta) {
+function tarte_au_citron() {
+    $privacyUrl = get_option('privacyUrl');
+    $bodyPosition = get_option('bodyPosition');
+    $hashtag = get_option('hashtag');
+    $cookieName = get_option('cookieName');
+    $Orientation = get_option('Orientation');
+    $groupServices = get_option('groupServices');
+    $serviceDefaultState = get_option('serviceDefaultState');
+    $showAlertSmall = get_option('showAlertSmall');
+    $cookieslist = get_option('cookieslist');
+    $closePopup = get_option('closePopup');
+    $adblocker = get_option('adblocker');
+    $DenyAllCta = get_option('DenyAllCta');
+    $AcceptAllCta = get_option('AcceptAllCta');
+    $highPrivacy = get_option('highPrivacy');
+    $handleBrowserDNTRequest = get_option('handleBrowserDNTRequest');
+    $removeCredit = get_option('removeCredit');
+    $moreInfoLink = get_option('moreInfoLink');
+    $useExternalCss = get_option('useExternalCss');
+    $useExternalJs = get_option('useExternalJs');
+    $readmoreLink = get_option('readmoreLink');
+    $mandatory = get_option('mandatory');
+    $mandatoryCta = get_option('mandatoryCta');
+
     ?>
     <script src="/wp-content/plugins/CooLenia/tarteaucitron.js-1.10.0/tarteaucitron.js"></script>
     <script type="text/javascript">
         tarteaucitron.init({
-            "privacyUrl": <?= $privacyUrl ?>, /* Privacy policy url */
-            "bodyPosition": <?= $bodyPosition ?>, /* or top to bring it as first element for accessibility */
+            "privacyUrl": "<?= $privacyUrl ?>", /* Privacy policy url */
+            "bodyPosition": "<?= $bodyPosition ?>", /* or top to bring it as first element for accessibility */
 
-            "hashtag": <?= $hashtag ?>, /* Open the panel with this hashtag */
-            "cookieName": <?= $cookieName ?>, /* Cookie name */
+            "hashtag": "<?= $hashtag ?>", /* Open the panel with this hashtag */
+            "cookieName": "<?= $cookieName ?>", /* Cookie name */
 
-            "orientation": <?= $Orientation ?>, /* Banner position (top - bottom) */
+            "orientation": "<?= $Orientation ?>", /* Banner position (top - bottom) */
 
             "groupServices": <?= $groupServices ?>, /* Group services by category */
-            "serviceDefaultState": <?= $serviceDefaultState ?>, /* Default state (true - wait - false) */
+            "serviceDefaultState": "<?= $serviceDefaultState ?>", /* Default state (true - wait - false) */
 
             "showAlertSmall": <?= $showAlertSmall ?>, /* Show the small banner on bottom right */
             "cookieslist": <?= $cookieslist ?>, /* Show the cookie list */
@@ -80,7 +80,7 @@ function tarte_au_citron($privacyUrl, $bodyPosition, $hashtag, $cookieName, $Ori
 
             //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
 
-            "readmoreLink": <?= $readmoreLink ?>, /* Change the default readmore link */
+            "readmoreLink": "<?= $readmoreLink ?>", /* Change the default readmore link */
 
             "mandatory": <?= $mandatory ?>, /* Show a message about mandatory cookies */
             "mandatoryCta": <?= $mandatoryCta ?> /* Show the disabled accept button when mandatory on */
