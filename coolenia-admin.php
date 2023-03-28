@@ -1,2 +1,5 @@
 <?php
-echo 'test';
+
+/**
+ * Markup callback for the settings page
+ */
