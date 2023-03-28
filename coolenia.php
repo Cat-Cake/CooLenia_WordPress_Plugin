@@ -6,15 +6,6 @@
  * Author: NoName
  */
 
-require_once(plugin_dir_path(__FILE__) . 'coolenia-admin.php');
-
-
-define('WP_DEBUG', true);
-define('WP_DEBUG_LOG', true);
-define('WP_DEBUG_DISPLAY', false);
-@ini_set('display_errors', 0);
-
-
 function starting_tarte_au_citron() {
     wp_enqueue_script( 'mytarteaucitron', './tarteaucitron.js-1.10.0/tarteaucitron.js' );
 }
@@ -96,7 +87,7 @@ function coolenia_settings_page_markup(){
         <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
         <form action="options.php" method="POST">
             <?php
-            settings_fields( 'example_setting' );
+            settings_fields( 'CooLenia_setting' );
             do_settings_sections( 'coolenia_settings_page' );
             submit_button();
 
@@ -112,9 +103,141 @@ add_action( 'admin_init', 'coolenia_setting_container' );
  */
 function coolenia_setting(){
     register_setting(
-        'example_setting',     // Settings group.
-        'example_setting',     // Setting name
-        'sanitize_text_field'  // Sanitize callback.
+        'CooLenia_setting',     // Settings group.
+        'privacyUrl',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'bodyPosition',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'hashtag',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'cookieName',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'Orientation',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'Orientation',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'groupServices',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'serviceDefaultState',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'showAlertSmall',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'cookieslist',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'closePopup',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'adblocker',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'DenyAllCta',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'AcceptAllCta',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'highPrivacy',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'handleBrowserDNTRequest',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'removeCredit',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'moreInfoLink',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'useExternalCss',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'useExternalJs',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'readmoreLink',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'mandatory',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
+    );
+
+    register_setting(
+        'CooLenia_setting',     // Settings group.
+        'mandatoryCta',     // Setting name
+        'coolenia_settings_page'  // Sanitize callback.
     );
 }
 
@@ -324,7 +447,7 @@ function coolenia_section_markup( $args ){}
  */
 
 function privacyUrl_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'privacyUrl' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -334,33 +457,33 @@ function privacyUrl_field_markup( $args ){
 }
 
 function bodyPosition_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'bodyPosition' );
     $value   = $setting ?: '';
     ?>
     <label>
-        <select name="bodyposition">
-            <option>Top</option>
-            <option>Bottom</option>
+        <select name="bodyPosition">
+            <option>top</option>
+            <option>bottom</option>
         </select>
     </label>
     <?php
 }
 
 function orientation_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'Orientation' );
     $value   = $setting ?: '';
     ?>
     <label>
-        <select name="orientation">
-            <option>Top</option>
-            <option>Bottom</option>
+        <select name="Orientation">
+            <option>top</option>
+            <option>bottom</option>
         </select>
     </label>
     <?php
 }
 
 function hashtag_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'hashtag' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -370,7 +493,7 @@ function hashtag_field_markup( $args ){
 }
 
 function cookieName_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'cookieName' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -380,7 +503,7 @@ function cookieName_field_markup( $args ){
 }
 
 function groupServices_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'groupServices' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -393,7 +516,7 @@ function groupServices_field_markup( $args ){
 }
 
 function serviceDefaultState_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'serviceDefaultState' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -407,7 +530,7 @@ function serviceDefaultState_field_markup( $args ){
 }
 
 function showAlertSmall_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'showAlertSmall' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -420,7 +543,7 @@ function showAlertSmall_field_markup( $args ){
 }
 
 function cookieslist_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'cookieslist' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -434,7 +557,7 @@ function cookieslist_field_markup( $args ){
 }
 
 function closePopup_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'closePopup' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -447,7 +570,7 @@ function closePopup_field_markup( $args ){
 }
 
 function adblocker_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'adblocker' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -460,7 +583,7 @@ function adblocker_field_markup( $args ){
 }
 
 function DenyAllCta_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'DenyAllCta' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -474,7 +597,7 @@ function DenyAllCta_field_markup( $args ){
 }
 
 function AcceptAllCta_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'AcceptAllCta' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -487,7 +610,7 @@ function AcceptAllCta_field_markup( $args ){
 }
 
 function highPrivacy_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'highPrivacy' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -500,7 +623,7 @@ function highPrivacy_field_markup( $args ){
 }
 
 function handleBrowserDNTRequest_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'handleBrowserDNTRequest' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -513,7 +636,7 @@ function handleBrowserDNTRequest_field_markup( $args ){
 }
 
 function removeCredit_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'removeCredit' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -526,7 +649,7 @@ function removeCredit_field_markup( $args ){
 }
 
 function moreInfoLink_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'moreInfoLink' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -540,7 +663,7 @@ function moreInfoLink_field_markup( $args ){
 
 
 function useExternalCss_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'useExternalCss' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -553,7 +676,7 @@ function useExternalCss_field_markup( $args ){
 }
 
 function useExternalJs_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'useExternalJs' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -566,7 +689,7 @@ function useExternalJs_field_markup( $args ){
 }
 
 function readmoreLink_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'readmoreLink' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -576,7 +699,7 @@ function readmoreLink_field_markup( $args ){
 }
 
 function mandatory_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'mandatory' );
     $value   = $setting ?: '';
     ?>
     <label>
@@ -589,7 +712,7 @@ function mandatory_field_markup( $args ){
 }
 
 function mandatoryCta_field_markup( $args ){
-    $setting = get_option( 'example_setting' );
+    $setting = get_option( 'mandatoryCta' );
     $value   = $setting ?: '';
     ?>
     <label>
