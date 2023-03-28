@@ -99,6 +99,7 @@ function coolenia_settings_page_markup(){
             settings_fields( 'example_setting' );
             do_settings_sections( 'coolenia_settings_page' );
             submit_button();
+
             ?>
         </form>
     </div>
@@ -326,7 +327,9 @@ function privacyUrl_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <input class="regular-text" type="text" name="example_setting" value="<?php echo esc_attr( $value ); ?>">
+    <label>
+        <input class="regular-text" type="text" name="privacyUrl" value="<?php echo esc_attr( $value ); ?>">
+    </label>
     <?php
 }
 
@@ -334,10 +337,12 @@ function bodyPosition_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>Top</option>
-        <option>Bottom</option>
-    </select>
+    <label>
+        <select name="bodyposition">
+            <option>Top</option>
+            <option>Bottom</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -345,10 +350,12 @@ function orientation_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>Top</option>
-        <option>Bottom</option>
-    </select>
+    <label>
+        <select name="orientation">
+            <option>Top</option>
+            <option>Bottom</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -356,7 +363,9 @@ function hashtag_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <input class="regular-text" type="text" name="example_setting" value="<?php echo esc_attr( $value ); ?>">
+    <label>
+        <input class="regular-text" type="text" name="hashtag" value="<?php echo esc_attr( $value ); ?>">
+    </label>
     <?php
 }
 
@@ -364,7 +373,9 @@ function cookieName_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <input class="regular-text" type="text" name="example_setting" value="<?php echo esc_attr( $value ); ?>">
+    <label>
+        <input class="regular-text" type="text" name="cookieName" value="<?php echo esc_attr( $value ); ?>">
+    </label>
     <?php
 }
 
@@ -372,10 +383,12 @@ function groupServices_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="groupServices">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -383,11 +396,13 @@ function serviceDefaultState_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>true</option>
-        <option>wait</option>
-        <option>false</option>
-    </select>
+    <label>
+        <select name="serviceDefaultState">
+            <option>true</option>
+            <option>wait</option>
+            <option>false</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -395,10 +410,12 @@ function showAlertSmall_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="showAlertSmall">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -406,11 +423,13 @@ function cookieslist_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>true</option>
-        <option>wait</option>
-        <option>false</option>
-    </select>
+    <label>
+        <select name="cookieslist">
+            <option>true</option>
+            <option>wait</option>
+            <option>false</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -418,10 +437,12 @@ function closePopup_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="closePopup">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -429,10 +450,12 @@ function adblocker_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="adblocker">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -440,11 +463,13 @@ function DenyAllCta_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>true</option>
-        <option>wait</option>
-        <option>false</option>
-    </select>
+    <label>
+        <select name="DenyAllCta">
+            <option>true</option>
+            <option>wait</option>
+            <option>false</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -452,10 +477,12 @@ function AcceptAllCta_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="AcceptAllCta">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -463,10 +490,12 @@ function highPrivacy_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="highPrivacy">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -474,10 +503,12 @@ function handleBrowserDNTRequest_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="handleBrowserDNTRequest">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -485,10 +516,12 @@ function removeCredit_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="removeCredit">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -496,10 +529,12 @@ function moreInfoLink_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="moreInfoLink">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -508,10 +543,12 @@ function useExternalCss_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="useExternalCss">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -519,10 +556,12 @@ function useExternalJs_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="useExternalJs">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -530,7 +569,9 @@ function readmoreLink_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <input class="regular-text" type="text" name="example_setting" value="<?php echo esc_attr( $value ); ?>">
+    <label>
+        <input class="regular-text" type="text" name="readmoreLink" value="<?php echo esc_attr( $value ); ?>">
+    </label>
     <?php
 }
 
@@ -538,10 +579,12 @@ function mandatory_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="mandatory">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
 
@@ -549,9 +592,11 @@ function mandatoryCta_field_markup( $args ){
     $setting = get_option( 'example_setting' );
     $value   = $setting ?: '';
     ?>
-    <select>
-        <option>false</option>
-        <option>true</option>
-    </select>
+    <label>
+        <select name="mandatoryCta">
+            <option>false</option>
+            <option>true</option>
+        </select>
+    </label>
     <?php
 }
